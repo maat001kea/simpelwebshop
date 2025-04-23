@@ -1,3 +1,7 @@
 export default function Page() {
-  return <div>id</div>;
+  return (
+    <main>
+      <div>id</div>
+    </main>
+  );
 }
