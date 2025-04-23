@@ -1,3 +1,7 @@
 export default function Page() {
-  return <div>payment</div>;
+  return (
+    <main>
+      <div>payment</div>
+    </main>
+  );
 }
