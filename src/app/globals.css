@@ -5,6 +5,26 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-my-orange-900: var(#be4d0d);
+  --color-my-orange-700: var(#d9611c);
+  --color-my-orange-main: var(#f27f3d);
+  --color-my-orange-300: var(#f9bf9e);
+  --color-my-orange-100: var(#fce5d8);
+
+  --color-my-dark-main: var(#1a283f);
+  --color-my-dark-700: var(#485365);
+  --color-my-dark-500: var(#767e8c);
+  --color-my-dark-300: var(#a3a9b2);
+  --color-my-dark-100: var(#d1d4d9);
+
+  --color-my-light-900: var(#989898);
+  --color-my-light-700: var(#d8d8d8);
+  --color-my-light-main: var(#f2f2f2);
+  --color-my-light-300: var(#f9f9f9);
+  --color-my-light-100: var(#ffffff);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
