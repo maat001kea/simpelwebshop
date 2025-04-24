@@ -13,7 +13,7 @@ const HeroSection = () => {
       {/* Indhold ovenpå billedet */}
       <div className="absolute inset-0 flex items-center justify-center z-10 text-white">
         <div className="max-w-3xl px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold">BuzzBasket</h1>
+          <h1 className="sm:text-4x1 text-9xl font-extrabold">BuzzBasket</h1>
           <Button link="/products" />
         </div>
       </div>

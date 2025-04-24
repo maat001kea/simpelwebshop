@@ -11,7 +11,7 @@ const SingleText = () => {
             <h2 className="text-gray-700 p-2.5">brand</h2>
             <h3 className="text-gray-700 p-2.5">Pris</h3>
             <div className="mt-4 p-4">
-              <SingleButton />
+              <SingleButton label="Tilføj til kurv" />
             </div>
           </div>
         </div>
