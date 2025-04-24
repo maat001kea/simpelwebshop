@@ -1,8 +1,14 @@
-export default function Page() {
+import Kategori from "../components/Kategori";
+import ProductsMain from "../components/ProductsMain";
+
+export default async function Page() {
+  const data = await fetch("https://dummyjson.com/products/categories");
+  const categories = await data.json();
   return (
     <main>
-      <div>kategory</div>
-      <div>products</div>
+      <Kategori data={categories} />
+
+      <ProductsMain />
     </main>
   );
 }
