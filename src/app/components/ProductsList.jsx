@@ -9,8 +9,8 @@ const ProductsList = async () => {
       <ul className="grid grid-cols-3 gap-6 ">
         {products.products.map((item) => {
           return (
-            <Link href={`/products/${item.id}`}>
-              <li className="bg-gray-300 shadow-2xl rounded-2xl" key={item.id}>
+            <li className="bg-gray-300 shadow-2xl rounded-2xl" key={item.id}>
+              <Link href={`/products/${item.id}`}>
                 <img className="bg-white w-full h-50" src={item.images[0]} alt="" />
                 <div className="p-4 ">
                   <p>{item.title}</p>
@@ -19,8 +19,8 @@ const ProductsList = async () => {
                     <IoCartOutline size={40} />
                   </button>
                 </div>
-              </li>
-            </Link>
+              </Link>
+            </li>
           );
         })}
       </ul>
