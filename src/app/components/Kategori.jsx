@@ -1,19 +1,18 @@
 "use client";
-import { useState } from "react";
+
 const Kategori = ({ data }) => {
-  const [kategori, setkategori] = useState(false);
   return (
     <div>
-      <p onClick={() => setkategori(!kategori)}>Kategories</p>
-      {kategori === true ? (
-        <ul>
-          {data.map((cat) => {
-            return <li key={cat.slug}>{cat.name}</li>;
-          })}
-        </ul>
-      ) : (
-        ""
-      )}
+      <p>Kategories</p>
+      <select name="products" id="kategori-select">
+        {data.map((cat) => {
+          return (
+            <option key={cat.slug} value={cat.name}>
+              {cat.name}
+            </option>
+          );
+        })}
+      </select>
     </div>
   );
 };
