@@ -1,5 +1,10 @@
 const ProductsMain = () => {
-  return <div>main comp</div>;
+  return (
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 };
 
 export default ProductsMain;
