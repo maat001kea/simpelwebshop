@@ -23,13 +23,12 @@ export default function ProductDetailsPage() {
     }
   }, [id]);
 
-  // Vis loading-indikator mens produktet hentes
-  if (!product) return <p className="text-center mt-20">Indlæser produkt...</p>;
+  if (!product) return <p>Indlæser produkt...</p>;
 
   return (
-    <div className="p-8 max-w-4xl mx-auto mt-20 text-center">
-      {/* Produktbillede */}
-      <img src={product.thumbnail} alt={product.title} className="w-full max-w-md h-64 object-contain mx-auto mb-6 rounded-lg shadow" />
+    <div className="mt-32 text-center">
+      {/* Vis thumbnail-billedet */}
+      <img src={product.thumbnail} alt={product.title} className="inline-block mb-6" style={{ maxHeight: "250px" }} />
 
       {/* Titel og pris */}
       <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
