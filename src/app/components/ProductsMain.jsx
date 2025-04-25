@@ -1,9 +1,9 @@
 import ProductsList from "./ProductsList";
 
-const ProductsMain = () => {
+const ProductsMain = ({ data }) => {
   return (
     <div className="grid grid-cols-4">
-      <ProductsList />
+      <ProductsList data={data.products} />
       <div>cart</div>
     </div>
   );
