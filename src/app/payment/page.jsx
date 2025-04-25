@@ -1,7 +1,10 @@
-export default function Page() {
+import CardBox from "@/app/components/CardBox";
+
+export default function PaymentPage() {
   return (
-    <main>
-      <div>payment</div>
-    </main>
+    <div className="min-h-screen p-8">
+      <h1 className="text-3xl font-bold mb-6">Betaling</h1>
+      <CardBox />
+    </div>
   );
 }
