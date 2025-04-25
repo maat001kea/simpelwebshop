@@ -16,7 +16,6 @@ const SingleText = ({ title, brand, category, description, price }) => {
             </div>
           </div>
         </div>
-        {/* <div></div> */}
       </div>
     </div>
   );
