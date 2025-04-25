@@ -14,7 +14,7 @@ const ProductCard = (props) => {
             <p className="font-bold">{`${props.price} kr.`}</p>
           </div>
 
-          <button className="bg-orange-500 text-white rounded-2xl p-2 ">butona</button>
+          <button className="bg-orange-500 text-white rounded-2xl p-2 ">buton</button>
         </div>
       </Link>
     </li>
