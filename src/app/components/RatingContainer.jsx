@@ -1,26 +1,11 @@
 import RatingCard from "./RatingCard";
 import avatarImg from "@/app/assets/avatar.png";
 
-const reviews = [
-  {
-    avatar: avatarImg,
-    name: "Farwa",
-    comment: "This product was awesome! Smooth and lightweight.",
-    date: "April 24, 2025",
-    initialRating: 4,
-  },
-];
-
-const RatingContainer = () => {
+const RatingContainer = ({ reviews }) => {
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
-
-      <div className="grid gap-6 md:grid-cols-2">
-        {reviews.map((review, index) => (
-          <RatingCard key={index} {...review} />
-        ))}
-      </div>
+      <div className="grid gap-6 md:grid-cols-2">{reviews?.length > 0 ? reviews.map((review, index) => <RatingCard key={index} avatar={avatarImg} name={review.reviewerName} email={review.reviewerEmail} comment={review.comment} date={review.date} initialRating={review.rating} />) : <p className="text-gray-500">No reviews yet.</p>}</div>
     </div>
   );
 };
