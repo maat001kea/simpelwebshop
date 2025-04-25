@@ -17,7 +17,7 @@ const CardBox = () => {
 
         {/* Hvis kurven er tom */}
         {cart.length === 0 ? (
-          <p className="text-gray-500">Kurven er tom.</p>
+          <p className="text-gray-500">Kurven er toms.</p>
         ) : (
           <>
             {/* Liste over produkter */}
