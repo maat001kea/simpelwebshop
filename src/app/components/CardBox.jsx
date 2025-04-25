@@ -37,7 +37,7 @@ const CardBox = () => {
 
             {/* Betal knap */}
             <div className="mt-6 text-center">
-              <Link href="/checkout" className="bg-[#F27F3D] text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 ease-in-out inline-block">
+              <Link href="/payment" className="bg-[#F27F3D] text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 ease-in-out inline-block">
                 Betal nu
               </Link>
             </div>
