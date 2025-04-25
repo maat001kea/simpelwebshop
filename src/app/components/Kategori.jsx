@@ -2,9 +2,9 @@
 
 const Kategori = ({ data }) => {
   return (
-    <div>
+    <form action="/products">
       <p>Kategories</p>
-      <select name="products" id="kategori-select">
+      <select name="category" id="category-select">
         {data.map((cat) => {
           return (
             <option key={cat.slug} value={cat.name}>
@@ -13,7 +13,8 @@ const Kategori = ({ data }) => {
           );
         })}
       </select>
-    </div>
+      <button type="submit">submit</button>
+    </form>
   );
 };
 
