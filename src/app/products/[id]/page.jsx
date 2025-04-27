@@ -13,10 +13,11 @@ export default async function Page({ params }) {
 
   return (
     <main>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-col md:flex-row gap-2">
         <SingleViewData mainImage={data.images} thumbnailImages={data.thumbnail} />
-        <SingleText title={data.title} brand={data.brand} category={data.category} description={data.description} price={data.price} />
+        <SingleText title={data.title} brand={data.brand} category={data.category} description={data.description} price={data.price} rating={data.rating} />
         <CardBox />
+        {/* må ikke rør cardbox */}
       </div>
       <div>
         <RatingContainer reviews={data.reviews} />

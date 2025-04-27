@@ -10,15 +10,27 @@ const ThumbnailImages = ({ images = [], main }) => {
     }
   }, [main, images]);
 
+  // Logic to ensure there are always 3 thumbnails if there's only one image
+  const displayImages = images.length === 1 ? [images[0], images[0], images[0]] : images;
+
   return (
     <div>
       {selectedImage && typeof selectedImage === "string" && (
-        <div className="mb-4">
-          <Image src={selectedImage} alt="Main product image" width={400} height={400} className="rounded-lg object-cover" />
+        <div className="relative w-full max-w-2xl aspect-square">
+          <Image src={selectedImage} alt="Main product image" layout="fill" className="rounded-lg object-cover" />
         </div>
       )}
 
-      <div className="flex gap-2">{images.map((img, index) => (typeof img === "string" ? <Image key={index} src={img} alt={`Thumbnail ${index}`} width={100} height={100} className="rounded-lg cursor-pointer hover:opacity-80 gap-4 p-5" onClick={() => setSelectedImage(img)} /> : null))}</div>
+      {/* Thumbnail container with flex and responsive behavior */}
+      <div className="flex overflow-x-auto gap-4 w-full pb-4">
+        {displayImages.map((img, index) =>
+          typeof img === "string" ? (
+            <div key={index} className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 cursor-pointer">
+              <Image src={img} alt={`Thumbnail ${index}`} layout="fill" className="rounded-lg object-cover hover:opacity-80" onClick={() => setSelectedImage(img)} />
+            </div>
+          ) : null
+        )}
+      </div>
     </div>
   );
 };

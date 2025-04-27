@@ -10,11 +10,11 @@ import ThumbnailImages from "./ThumbnailImages";
 
 const SingleViewData = ({ mainImage, thumbnailImages }) => {
   return (
-    <div className="p-8 max-w-6xl mx-auto md:ml-0 md:mr-auto mt-20">
-      <div className="flex flex-col md:flex-row gap-10">
+    <div className="mt-20 mx-4">
+      <div className="flex flex-col items-center md:flex-row gap-10 max-w-7xl mx-auto w-full">
         {/* Left side - image viewer */}
-        <div className="md:w-1/1 ml-0">
-          <div className="bg-white rounded-2xl shadow-2xl p-6">
+        <div className="ml-0">
+          <div className=" rounded-2xl shadow-2xl p-6">
             <ThumbnailImages images={mainImage} main={thumbnailImages} />
           </div>
         </div>
