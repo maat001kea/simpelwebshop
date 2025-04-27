@@ -25,3 +25,12 @@ export default async function Page({ params }) {
     </main>
   );
 }
+
+// const { slug } = params; // Getting slug from the URL params
+// // Fetching product data based on the slug instead of the id
+// const response = await fetch(`https://dummyjson.com/products`);
+// const products = await response.json();
+
+// // Find the product that matches the slug
+// const data = products.find((product) => product.slug === slug);
+// console.log(data);
