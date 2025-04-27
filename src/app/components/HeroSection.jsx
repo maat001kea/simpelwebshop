@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="fullbleed ">
       {/* Baggrundsbillede med fullbleed */}
-      <Image src={image} alt="Hero" fill className=" fullbleed" priority />
+      <Image src={image} alt="Hero" fill className=" fullbleed " priority />
 
       {/* Indhold ovenpå billedet */}
       <div className="absolute inset-0 flex items-center justify-center z-10 text-white">

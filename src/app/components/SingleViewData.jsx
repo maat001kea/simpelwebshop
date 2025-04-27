@@ -2,12 +2,6 @@
 import React from "react";
 import ThumbnailImages from "./ThumbnailImages";
 
-// import pinkBrush from "@/app/assets/pinkbrush.png";
-// import brown from "@/app/assets/brown.png";
-// import beige from "@/app/assets/beige.png";
-
-// const thumbnailImages = [pinkBrush, brown, beige];
-
 const SingleViewData = ({ mainImage, thumbnailImages }) => {
   return (
     <div className="mt-20 mx-4">

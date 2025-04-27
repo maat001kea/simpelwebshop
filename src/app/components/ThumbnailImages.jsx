@@ -16,17 +16,17 @@ const ThumbnailImages = ({ images = [], main }) => {
   return (
     <div>
       {selectedImage && typeof selectedImage === "string" && (
-        <div className="relative w-full max-w-2xl aspect-square">
-          <Image src={selectedImage} alt="Main product image" layout="fill" className="rounded-lg object-cover" />
+        <div className="relative aspect-square ">
+          <Image src={selectedImage} alt="Main product image" fill className="rounded-lg object-cover" />
         </div>
       )}
 
-      {/* Thumbnail container with flex and responsive behavior */}
-      <div className="flex overflow-x-auto gap-4 w-full pb-4">
+      {/* Thumbnail container with thumbnail images */}
+      <div className="flex gap-4  pb-4">
         {displayImages.map((img, index) =>
           typeof img === "string" ? (
             <div key={index} className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 cursor-pointer">
-              <Image src={img} alt={`Thumbnail ${index}`} layout="fill" className="rounded-lg object-cover hover:opacity-80" onClick={() => setSelectedImage(img)} />
+              <Image src={img} alt={`Thumbnail ${index}`} fill className="rounded-lg object-cover hover:opacity-80" onClick={() => setSelectedImage(img)} />
             </div>
           ) : null
         )}
