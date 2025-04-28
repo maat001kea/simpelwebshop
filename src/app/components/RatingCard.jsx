@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const RatingCard = ({ avatar, name, comment, date, initialRating = 0 }) => {
   return (
-    <div className="max-w-md p-4 bg-white rounded-xl shadow-md space-y-4">
+    <div className="max-w-md p-4 space-y-4 mt-3.5">
       <div className="flex items-center gap-4">
         <Image src={avatar} alt={`${name}'s avatar`} width={48} height={48} className="rounded-full object-cover" />
         <div>
