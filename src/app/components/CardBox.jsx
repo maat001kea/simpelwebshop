@@ -7,10 +7,12 @@ const CardBox = () => {
   const cart = useCartStore((state) => state.cart);
 
   // Udregn totalpris
-  const totalPrice = cart.reduce((sum, item) => {
-    const itemTotal = (item.price || 0) * (item.quantity || 0); // Beskyt mod NaN
-    return sum + itemTotal;
-  }, 0);
+  const totalPrice = cart
+    .reduce((sum, item) => {
+      const itemTotal = (item.price || 0) * (item.quantity || 0); // Beskyt mod NaN
+      return sum + itemTotal;
+    }, 0)
+    .toFixed(2); // Formatér til 2 decimaler
 
   return (
     <div className="mt-32">
@@ -27,7 +29,7 @@ const CardBox = () => {
                   <div>
                     <span className="font-medium">{item.title}</span> x {item.quantity}
                   </div>
-                  <div className="font-semibold">{item.price * item.quantity} kr</div>
+                  <div className="font-semibold">{(item.price * item.quantity).toFixed(2)} kr</div>
                 </li>
               ))}
             </ul>
