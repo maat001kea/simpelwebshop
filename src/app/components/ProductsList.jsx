@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IoCartOutline } from "react-icons/io5";
 import ProductCard from "./ProductCard";
+
 const ProductsList = ({ data }) => {
   return (
     <div className="col-span-3">
