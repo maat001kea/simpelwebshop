@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const CardBox = () => {
   const cart = useCartStore((state) => state.cart);
+  console.log(cart);
 
   // Udregn totalpris
   const totalPrice = cart.reduce((sum, item) => {
