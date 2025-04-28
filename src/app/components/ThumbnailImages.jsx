@@ -14,10 +14,11 @@ const ThumbnailImages = ({ images = [], main }) => {
   const displayImages = images.length === 1 ? [images[0], images[0], images[0]] : images;
 
   return (
-    <div>
+    <div className="bg-gray-100">
       {selectedImage && typeof selectedImage === "string" && (
         <div className="relative aspect-square ">
           <Image src={selectedImage} alt="Main product image" fill className="rounded-lg object-cover" />
+          {/* <span className="absolute top-2 left-2 inline-block bg-red-100 text-red-900 text-xs font-semibold px-2 py-1 rounded-full">{`${props.discount} % off`}</span> */}
         </div>
       )}
 

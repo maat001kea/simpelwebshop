@@ -4,7 +4,10 @@ import SingleButton from "./SingleViewButton";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 const SingleText = (product) => {
-  const { title, brand, category, description, price, rating } = product;
+  const { title, brand, category, description, price, rating, discount } = product;
+  const discountAmount = (price * discount) / 100;
+  const discountedPrice = price - discountAmount;
+  console.log("Price:", price, "Discount:", discount);
 
   const renderStars = (rating) => {
     const totalStars = 5;
@@ -35,7 +38,11 @@ const SingleText = (product) => {
             </span>
           )}
           <p className="text-gray-600 mb-4 text-base sm:text-lg md:text-xl lg:text-xl">{description}</p>
-          <h3 className="text-gray-800 mb-4 font-bold text-xl">{price} kr</h3>
+          {/* <h3 className="text-gray-800 mb-4 font-bold text-xl">${price}</h3> */}
+          <div className="flex flex-col">
+            <span className="text-sm line-through text-gray-500">{`$${price}`}</span>
+            <span className=" text-gray-800 mb-4 font-bold text-xl">{`$${discountedPrice.toFixed(2)}`}</span>
+          </div>
           <div className="flex items-center mb-4 gap-5">
             <h3 className="flex">{renderStars(rating)}</h3>
             <h3 className="text-gray-800 font-semibold">{rating}</h3>

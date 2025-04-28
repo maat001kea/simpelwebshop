@@ -15,7 +15,7 @@ export default async function Page({ params }) {
     <main>
       <div className="flex flex-col lg:flex-row gap-4">
         <SingleViewData mainImage={data.images} thumbnailImages={data.thumbnail} />
-        <SingleText title={data.title} brand={data.brand} category={data.category} description={data.description} price={data.price} rating={data.rating} />
+        <SingleText title={data.title} brand={data.brand} category={data.category} description={data.description} price={data.price} rating={data.rating} discount={data.discountPercentage} />
         <CardBox />
         {/* må ikke rør cardbox */}
       </div>
@@ -25,12 +25,3 @@ export default async function Page({ params }) {
     </main>
   );
 }
-
-// const { slug } = params; // Getting slug from the URL params
-// // Fetching product data based on the slug instead of the id
-// const response = await fetch(`https://dummyjson.com/products`);
-// const products = await response.json();
-
-// // Find the product that matches the slug
-// const data = products.find((product) => product.slug === slug);
-// console.log(data);

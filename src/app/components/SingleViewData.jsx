@@ -4,7 +4,7 @@ import ThumbnailImages from "./ThumbnailImages";
 
 const SingleViewData = ({ mainImage, thumbnailImages }) => {
   return (
-    <div className="mt-20 mx-4">
+    <div className="mt-20 mx-4 bg-gray-100">
       <div className="flex flex-col items-center md:flex-row gap-10 max-w-7xl mx-auto w-full">
         {/* Left side - image viewer */}
         <div className="ml-0">
