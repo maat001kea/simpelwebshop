@@ -7,28 +7,31 @@ import { useCartStore } from "@/app/store/cartStore";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white grid grid-cols-subgrid" style={{ gridColumn: "full-bleed" }}>
-      <div className="flex flex-wrap sm:flex-wrap justify-between items-center py-4 px-4 sm:px-0" style={{ gridColumn: "content" }}>
-        {/* Left: Logo + Product */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-8 w-full sm:w-auto">
-          <Link href="/" className="flex items-center text-orange-500 text-5xl sm:text-6xl font-bold whitespace-nowrap">
-            <span>B</span>
-            <span className="text-2xl sm:text-3xl font-semibold ml-0">uzz</span>
-            <span>B</span>
-            <span className="text-2xl sm:text-3xl font-semibold ml-0">asket</span>
-          </Link>
+    <header className="sticky top-0 z-50 bg-white" style={{ gridColumn: "full-bleed" }}>
+      <div className="grid grid-cols-subgrid" style={{ gridColumn: "content" }}>
+        <div className="flex justify-between items-center py-4 px-2">
+          {/* Left: Logo + Product */}
+          <div className="flex flex-1 sm:flex-row items-start sm:items-center gap-2 sm:gap-8">
+            <Link href="/" className="flex items-center text-orange-500 text-5xl sm:text-6xl font-bold whitespace-nowrap">
+              <span>B</span>
+              <span className="text-2xl sm:text-3xl font-semibold ml-0">uzz</span>
+              <span>B</span>
+              <span className="text-2xl sm:text-3xl font-semibold ml-0">asket</span>
+            </Link>
 
-          <Link href="/products" className="text-xl sm:text-3xl font-bold text-gray-900">
-            Product
-          </Link>
-        </div>
+            <Link href="/products" className="relative underline text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors px-10 pt-2 hidden [@media(min-width:450px)]:block">
+              All Products
+              <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-500 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
+            </Link>
+          </div>
 
-        {/* Right: Cart */}
-        <div className="mt-2 sm:mt-0 text-orange-500 text-4xl sm:text-5xl relative">
-          <Link href="/payment">
-            <IoCartOutline className="hover:scale-110 transition-transform duration-200 cursor-pointer" />
-            <CartBadge />
-          </Link>
+          {/* Right: Cart */}
+          <div className="sm:mt-0 ml-auto text-orange-500 text-4xl sm:text-5xl relative">
+            <Link href="/payment">
+              <IoCartOutline className="hover:scale-110 transition-transform duration-200 cursor-pointer" />
+              <CartBadge />
+            </Link>
+          </div>
         </div>
       </div>
     </header>
