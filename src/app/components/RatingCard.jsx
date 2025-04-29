@@ -9,7 +9,7 @@ const RatingCard = ({ avatar, name, comment, date, initialRating = 0 }) => {
       <div className="flex items-center gap-4">
         <Image src={avatar} alt={`${name}'s avatar`} width={48} height={48} className="rounded-full object-cover" />
         <div>
-          <h4 className="font-semibold">{name}</h4>
+          <h4 className="font-semibold text-gray-800">{name}</h4>
           <p className="text-sm text-gray-500">{date}</p>
         </div>
       </div>

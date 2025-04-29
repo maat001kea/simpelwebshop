@@ -28,9 +28,9 @@ const SingleText = (product) => {
     <div className="mt-5 lg:mt-24 xl:mt-28">
       <div className="grid grid-cols-1 gap-6">
         <div className="p-4">
-          <h1 className="text-gray-800 font-bold mb-4 text-2xl sm:text-3xl md:text-4xl">{title}</h1>
-          <h2 className="text-gray-700 mb-4 lg:text-xl font-semibold">{brand}</h2>
-          <p className="text-gray-600 mb-4 lg:text-xl">{category}</p>
+          <h1 className="text-gray-600 font-bold mb-4 text-2xl sm:text-3xl md:text-4xl font-poppins">{title}</h1>
+          <h2 className="text-gray-500 mb-4 lg:text-xl font-semibold font-poppins">{brand}</h2>
+          <p className="text-gray-500 mb-4 lg:text-xl">{category}</p>
           {/* Highly Rated Badge */}
           {rating >= 4 && (
             <span className="inline-flex items-center gap-2 bg-[#F27F3D] text-white text-sm font-semibold px-3 py-1 rounded-full mb-4">
@@ -40,12 +40,12 @@ const SingleText = (product) => {
           <p className="text-gray-600 mb-4 text-base sm:text-lg md:text-xl lg:text-xl">{description}</p>
           {/* <h3 className="text-gray-800 mb-4 font-bold text-xl">${price}</h3> */}
           <div className="flex flex-col">
-            <span className="text-sm line-through text-gray-500">{`$${price}`}</span>
-            <span className=" text-gray-800 mb-4 font-bold text-xl">{`$${discountedPrice.toFixed(2)}`}</span>
+            <span className="text-sm line-through text-gray-500 font-semibold font-poppins">{`$${price}`}</span>
+            <span className=" text-gray-800 mb-4 font-semibold text-xl font-poppins">{`$${discountedPrice.toFixed(2)}`}</span>
           </div>
           <div className="flex items-center mb-4 gap-5">
             <h3 className="flex">{renderStars(rating)}</h3>
-            <h3 className="text-gray-800 font-semibold">{rating}</h3>
+            <h3 className="text-gray-600 font-semibold font-poppins">{rating}</h3>
           </div>
           <div className="mt-4 p-4">
             <SingleButton product={product} />
