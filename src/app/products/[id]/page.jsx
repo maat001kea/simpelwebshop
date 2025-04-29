@@ -15,7 +15,7 @@ export default async function Page({ params }) {
     <main>
       <div className="flex flex-col lg:flex-row gap-4">
         <SingleViewData mainImage={data.images} thumbnailImages={data.thumbnail} />
-        <SingleText title={data.title} brand={data.brand} category={data.category} description={data.description} price={data.price} rating={data.rating} discount={data.discountPercentage} />
+        <SingleText id={data.id} title={data.title} brand={data.brand} category={data.category} description={data.description} price={data.price} rating={data.rating} discount={data.discountPercentage} />
         <CardBox />
         {/* må ikke rør cardbox */}
       </div>

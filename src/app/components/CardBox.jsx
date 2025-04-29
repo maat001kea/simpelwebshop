@@ -70,13 +70,13 @@ const CardBox = () => {
                   </div>
 
                   {/* Viser total pris for denne vare */}
-                  <div className="font-semibold whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} kr</div>
+                  <div className="font-semibold whitespace-nowrap">${(item.price * item.quantity).toFixed(2)} </div>
                 </li>
               ))}
             </ul>
 
             {/* Viser samlet pris for hele kurven */}
-            <div className="mt-8 font-bold text-right text-2xl">Total: {totalPrice} kr</div>
+            <div className="mt-8 font-bold text-right text-2xl">Total: ${totalPrice} </div>
 
             {/* Betal knap */}
             <div className="mt-10 flex flex-col sm:flex-row justify-center sm:justify-end items-center gap-6">
