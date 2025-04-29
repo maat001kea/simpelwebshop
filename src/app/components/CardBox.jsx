@@ -21,7 +21,7 @@ const CardBox = () => {
     <div className="sticky top-38 mt-30 flex justify-center px-4">
       <div className="border-2 border-gray-300 rounded-2xl p-10 bg-white shadow-2xl max-w-6xl w-full">
         {/* Overskrift */}
-        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Betaling</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Betalingg</h1>
 
         {/* Hvis kurven er tom, vis besked */}
         {cart.length === 0 ? (
