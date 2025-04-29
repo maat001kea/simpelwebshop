@@ -43,13 +43,13 @@ const ProductCard = (props) => {
 
         <div className="p-4">
           <div className="flex justify-between mt-4">
-            <h1 className="text-gray-800 font-bold">{props.title}</h1>
+            <h1 className="text-gray-600 font-semibold font-poppins">{props.title}</h1>
           </div>
           <div className="flex justify-between mt-6 items-center">
             {/* Show discounted price */}
             <div className="flex flex-col">
-              <span className="text-sm line-through text-gray-500">{`$${props.price}`}</span>
-              <span className="font-bold text-[#F27F3D]">{`$${discountedPrice.toFixed(2)}`}</span>
+              <span className="text-sm line-through text-gray-500 font-poppins font-semibold">{`$${props.price}`}</span>
+              <span className="font-semibold text-[#F27F3D] font-poppins">{`$${discountedPrice.toFixed(2)}`}</span>
             </div>
           </div>
 
