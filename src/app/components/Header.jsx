@@ -19,7 +19,7 @@ const Header = () => {
               <span className="text-2xl sm:text-3xl font-semibold ml-0">asket</span>
             </Link>
 
-            <Link href="/products" className="relative underline text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors px-10 pt-2 hidden [@media(min-width:450px)]:block">
+            <Link href="/products" className="relative text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors px-10 pt-2 hidden [@media(min-width:450px)]:block">
               All Products
               <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-500 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
             </Link>
