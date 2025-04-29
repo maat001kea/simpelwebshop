@@ -1,20 +1,24 @@
 import Image from "next/image";
 import React from "react";
 
-import image from "../assets/dummy.png";
+import image from "../assets/heropic.png";
 import Button from "./Button";
 
 const HeroSection = () => {
   return (
-    <section className="fullbleed ">
-      {/* Baggrundsbillede med fullbleed */}
-      <Image src={image} alt="Hero" fill className=" fullbleed " priority />
+    <section className="fullbleed h-[100vh]">
+      {/* Background Image */}
+      <Image src={image} alt="Hero" fill className="object-cover block" priority />
 
-      {/* Indhold ovenpå billedet */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 text-white">
+      {/* Content on top */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white">
         <div className="max-w-3xl px-4 text-center">
-          <h1 className="sm:text-4x1 text-9xl font-extrabold">BuzzBasket</h1>
-          <Button link="/products" />
+          <h1 className="text-5xl sm:text-7xl font-extrabold pb-15 opacity-0 translate-y-10 animate-fadeInUp">Buzz Basket</h1>
+
+          <h2 className="text-2xl font-medium text-gray-100  animate-fadeInUp">
+            Fill your <span className="line-through text-gray-400">life</span> basket with our buzz items
+          </h2>
+          <Button className="mt-6" link="/products" />
         </div>
       </div>
     </section>
