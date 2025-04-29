@@ -10,8 +10,9 @@ const ThumbnailImages = ({ images = [], main }) => {
     }
   }, [main, images]);
 
-  // Logic to ensure there are always 3 thumbnails if there's only one image
-  const displayImages = images.length === 1 ? [images[0], images[0], images[0]] : images;
+  // Logic to ensure there are always 3 thumbnails if there's only one image and if there r more thumbnail images ,show only 3 images
+  // const displayImages = images.length === 1 ? [images[0], images[0], images[0]] : images;
+  const displayImages = images.length === 0 ? [main, main, main] : images.length === 1 ? [images[0], images[0], images[0]] : images.slice(0, 3);
 
   return (
     <div className="">
