@@ -56,10 +56,10 @@ const SingleButton = ({ product }) => {
     setLoading(true);
     setTimeout(() => {
       addToCart({
-        id: props.id,
-        title: props.title,
-        price: props.price,
-        quantity: 1, // ✅ quantity ikke qty
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        quantity: 1,
       });
       setLoading(false);
     }, 500); // Kunstig forsinkelse for at vise spinner
