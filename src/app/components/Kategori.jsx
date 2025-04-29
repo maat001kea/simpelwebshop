@@ -1,13 +1,16 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 const Kategori = ({ data }) => {
+  const router = useRouter();
+
+  function changeFilter(e) {
+    router.push(`/products?category=${e.target.value}`);
+  }
   return (
     <form action="/products">
-      <p>Kategories</p>
-      <select name="category" id="category-select">
-        <option key="" value="">
-          alle
-        </option>
+      <select onChange={changeFilter} name="category" id="category-select">
+        <option value="">alle</option>
         {data.map((cat) => {
           return (
             <option key={cat.slug} value={cat.slug}>
@@ -16,7 +19,6 @@ const Kategori = ({ data }) => {
           );
         })}
       </select>
-      <button type="submit">submit</button>
     </form>
   );
 };
