@@ -31,7 +31,6 @@ const ProductCard = (props) => {
     <li className="bg-gray-100 shadow-2xl rounded-2xl">
       <Link href={`/products/${props.id}`}>
         <div className="relative w-full h-50 bg-white">
-          {/* <img className="w-full h-50 object-cover" src={props.img} alt={props.title} /> */}
           <Image src={props.img} alt={props.title} width={500} height={300} className="w-full h-50 object-cover" />
           <span className="absolute top-2 left-2 inline-block bg-red-100 text-red-900 text-xs font-semibold px-2 py-1 rounded-full">{`${props.discount} % off`}</span>
           {props.rating >= 4 && (
@@ -46,7 +45,6 @@ const ProductCard = (props) => {
             <h1 className="text-gray-600 font-semibold font-poppins">{props.title}</h1>
           </div>
           <div className="flex justify-between mt-6 items-center">
-            {/* Show discounted price */}
             <div className="flex flex-col">
               <span className="text-sm line-through text-gray-500 font-poppins font-semibold">{`$${props.price}`}</span>
               <span className="font-semibold text-[#F27F3D] font-poppins">{`$${discountedPrice.toFixed(2)}`}</span>
@@ -57,15 +55,14 @@ const ProductCard = (props) => {
         </div>
       </Link>
 
-      {/* Læg i kurv-knappen udenfor Link */}
       <div className="p-4">
         <button
           onClick={() =>
             addToCart({
               id: props.id,
               title: props.title,
-              price: props.price,
-              quantity: 1, // ✅ quantity ikke qty
+              price: discountedPrice, // ✅ Brug den nedsatte pris i kurven
+              quantity: 1,
             })
           }
           className="bg-[#F27F3D] rounded-lg text-white font-bold py-2 px-4 hover:bg-orange-600 transition duration-300 ease-in-out w-full"
