@@ -6,20 +6,38 @@ import Link from "next/link";
 import { IoTrashOutline } from "react-icons/io5";
 
 const CardBox = () => {
-  const [loadingId, setLoadingId] = useState(null); // For + knapper
-  const [paying, setPaying] = useState(false); // For "Betal nu"
+  const [loadingId, setLoadingId] = useState(null); // For spinner på + knap
+  const [paying, setPaying] = useState(false); // For spinner på "Betal nu"
 
   const cart = useCartStore((state) => state.cart);
   const addToCart = useCartStore((state) => state.addToCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const updateQty = useCartStore((state) => state.updateQty);
 
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price || 0) * (item.quantity || 0), 0).toFixed(2);
+  // Udregn totalpris
+  const totalPrice = cart
+    .reduce((sum, item) => {
+      const itemTotal = (item.price || 0) * (item.quantity || 0);
+      return sum + itemTotal;
+    }, 0)
+    .toFixed(2);
 
+  // Tilføj én mere af produktet med rabatpris
   const handleAdd = (item) => {
     setLoadingId(item.id);
+
+    // ✅ Beregn rabatpris
+    const discountAmount = (item.price * item.discountPercentage) / 100;
+    const discountedPrice = item.price - discountAmount;
+
     setTimeout(() => {
-      addToCart({ id: item.id, title: item.title, price: item.price, quantity: 1 });
+      addToCart({
+        id: item.id,
+        title: item.title,
+        price: parseFloat(discountedPrice.toFixed(2)), // 👈 brug rabatpris
+        quantity: 1,
+        discountPercentage: item.discountPercentage, // behøver denne for flere tilføjelser
+      });
       setLoadingId(null);
     }, 400);
   };
@@ -27,7 +45,7 @@ const CardBox = () => {
   const handlePay = () => {
     setPaying(true);
     setTimeout(() => {
-      window.location.href = "/payment"; // simulerer navigation
+      window.location.href = "/payment";
     }, 700);
   };
 
@@ -45,6 +63,8 @@ const CardBox = () => {
                 <li key={item.id} className="py-4 flex justify-between items-center">
                   <div className="flex flex-col">
                     <span className="font-medium">{item.title}</span>
+
+                    {/* + / - knapper */}
                     <div className="flex items-center mt-2 border-2 border-yellow-400 rounded-full px-4 py-1 gap-4 w-36 justify-center">
                       {item.quantity > 1 ? (
                         <button onClick={() => updateQty(item.id, item.quantity - 1)} className="text-xl text-gray-700 font-bold">
@@ -61,17 +81,20 @@ const CardBox = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="font-semibold whitespace-nowrap">${(item.price * item.quantity).toFixed(2)}</div>
+
+                  {/* Pris pr. produkt */}
+                  <div className="font-semibold whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} kr</div>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 font-bold text-right text-2xl">Total: ${totalPrice}</div>
+            {/* Totalpris */}
+            <div className="mt-8 font-bold text-right text-2xl">Total: {totalPrice} kr</div>
 
-            {/* Betal knap med spinner */}
+            {/* Betal nu knap */}
             <div className="mt-10 flex flex-col sm:flex-row justify-center sm:justify-end items-center gap-6">
               <button onClick={handlePay} disabled={paying} className="bg-[#F27F3D] text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition duration-300 ease-in-out flex items-center gap-2">
-                {paying ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : "Betal nu"}
+                {paying ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : "Betal nu"}
               </button>
             </div>
           </>
