@@ -8,7 +8,6 @@ const ProductsList = ({ data, list, setList }) => {
   function sortPrice() {
     setList((prev) => prev.toSorted((b, a) => a["price"] - b["price"]));
   }
-  1;
 
   return (
     <div className="col-span-2 md:col-span-3">
