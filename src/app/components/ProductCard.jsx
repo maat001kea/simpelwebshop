@@ -25,6 +25,7 @@ const renderStars = (rating) => {
 const ProductCard = (props) => {
   const addToCart = useCartStore((state) => state.addToCart);
   const discountAmount = (props.price * props.discount) / 100;
+  11;
   const discountedPrice = props.price - discountAmount;
 
   return (
